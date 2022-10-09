@@ -788,11 +788,13 @@ local function encode(tbl)
 					describe("Value2",Table2)
 			else 
 				-- StaticIndexObjectValue
-				local Table = encode(Value) 
-				BinaryString = BinaryString..describe("ValueHeader","StaticIndexObjectValue")..
+				local Table = encode(Value)
+				if (table) then
+					BinaryString = BinaryString..describe("ValueHeader","StaticIndexObjectValue")..
 					describe("DataType",TIndex)..
 					describe("Value2",CIndex).. 
 					describe("Value2",Table)
+				end
 			end
 			continue
 		end
