@@ -789,7 +789,7 @@ local function encode(tbl)
 			else 
 				-- StaticIndexObjectValue
 				local Table = encode(Value)
-				if (table) then
+				if (table and TIndex and CIndex) then
 					BinaryString = BinaryString..describe("ValueHeader","StaticIndexObjectValue")..
 					describe("DataType",TIndex)..
 					describe("Value2",CIndex).. 
